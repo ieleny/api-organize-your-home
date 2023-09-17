@@ -27,6 +27,16 @@ services:
     command: redis-server --save 20 1 --loglevel warning --requirepass ${REDIS_PASSWORD}
     volumes: 
       - cache:/data
+  # api:
+  #   build:
+  #     context: ./java
+  #     dockerfile: Dockerfile
+  #   ports:
+  #     - 8081:8081
+  #   depends_on:
+  #     - db
+  #     - phpmyadmin
+  #     - redis
 volumes:
   db-base:
   cache:
