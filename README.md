@@ -76,13 +76,13 @@ I terminal
 [] O cache deve ter um TTL de 10 segundos.
 [] O serviço deve ir ao banco de dados apenas na primeira requisição dentro desse intervalo de tempo, caso a resposta não seja nula.
 [] Colocar ao menos um teste de integração que valide a API.
-[] É importante fornecer uma visibilidade do tempo gasto na construção.
+[X] É importante fornecer uma visibilidade do tempo gasto na construção.
 [] O serviço deverá ser executado usando docker e subindo todas as suas sub-dependências.
 
 # Tempo gasto na construção
 
 [16/09/2023] - Criar arquivo Docker do Mysql,Redis,PhpMyAdmin. Estudar sobre o redis e testar como funciona. [3 horas]
-[17/09/2023] - Começo do estudo para entender como funciona o spring boot. [4 horas]
+[17/09/2023] - Começo do estudo para entender como funciona o spring boot. [5 horas]
 
 
 # Links utilizados
