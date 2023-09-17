@@ -1,13 +1,17 @@
 # api-organize-your-home
-Api to save the data the project organize your home
+Api para salvar os dados do projeto 'app-organize-your-home' 
 
 # Tecnologies
+- Java 17
 - Java Spring boot
 - Redis
 - MySql (MariaDb)
+- Lombok ( Tecnologia para códigos repetitivos com anotações)
+- Maven (Gerenciador de dependências, build da aplicação)
+- JDBC-JdbcTemplate (Persistência de banco de dados)
 
 # Env file
-For project work, you need create a file .env with data:
+Para que o projeto funcione, é preciso criar o arquivo .env com essas informações
 ```` 
     #----------------------#
     # MysSql Maria db      #
@@ -33,28 +37,55 @@ For project work, you need create a file .env with data:
 Root name is: 'Root'
 
 # Execute commands docker
-Access docker folder and up the command to up the container  
+Acesse a pasta api-java-docker e execute o comando:
 
 ``` docker compose up ```
 
-Obs: The name of the container docker is 'api-java-docker'
+Obs: O nome do docker container irá ficar 'api-java-docker'
+
+# Execute Java spring boot
+I terminal 
+``` mvn spring-boot:run ```
 
 # Todo
-- Verbs api
+- Verbos da api
     - [Post] Add material
         - id (AUTO INCREMENT)
         - product-name (String)
         - quantity-bought (Float)
         - price-und (INTEGER)
-
     - [GET] GET material
     - [GET] GET material by id
     - [PATCH] UPDATE material  
     - [DELETE] Delete material
 
+- Versionamento de api
 - Testes
 - Docker
 - Postman
 
+# Regras de negocio
 
+[X] Gerar o projeto Spring boot
+[X] Criar o aquivo docker-compose (PhpMyAdmin, MySql, Redis )
+[ ] Criar o deploy da aplicação em java e adicionar no docker 
+[] Criar um serviço que se conecte a um banco de dados relacional, utilize o JdbcTemplate do Spring para essa conexão o banco será Mysql(MariaDb). 
+[] Criar conexão para o servidor Redis.
+[] Aplicar S.O.L.I.D
+[] Implementar uma API que retorne um objeto simples e utilize o Redis como cache.
+[] O cache deve ter um TTL de 10 segundos.
+[] O serviço deve ir ao banco de dados apenas na primeira requisição dentro desse intervalo de tempo, caso a resposta não seja nula.
+[] Colocar ao menos um teste de integração que valide a API.
+[] É importante fornecer uma visibilidade do tempo gasto na construção.
+[] O serviço deverá ser executado usando docker e subindo todas as suas sub-dependências.
+
+# Tempo gasto na construção
+
+[16/09/2023] - Criar arquivo Docker do Mysql,Redis,PhpMyAdmin. Estudar sobre o redis e testar como funciona. [3 horas]
+[17/09/2023] - Começo do estudo para entender como funciona o spring boot. [4 horas]
+
+
+# Links utilizados
+
+Criar projeto spring boot: https://start.spring.io/
 
