@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
-import organize.home.api.domain.Entities.Material;
+import organize.home.api.domain.entities.Material;
 import organize.home.api.infrastructure.repository.IMaterialRepository;
 
 @Repository

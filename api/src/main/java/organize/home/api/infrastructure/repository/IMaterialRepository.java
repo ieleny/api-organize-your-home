@@ -3,7 +3,7 @@ package organize.home.api.infrastructure.repository;
 import java.util.List;
 import java.util.Optional;
 
-import organize.home.api.domain.Entities.Material;
+import organize.home.api.domain.entities.Material;
 
 public interface IMaterialRepository 
 {    

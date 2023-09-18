@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import organize.home.api.application.service.MaterialService;
-import organize.home.api.domain.Entities.Material;
+import organize.home.api.domain.entities.Material;
 
 @RestController
 @RequestMapping("/api/v1/material")
