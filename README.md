@@ -78,6 +78,7 @@ I terminal
 [X] É importante fornecer uma visibilidade do tempo gasto na construção.
 [] O serviço deverá ser executado usando docker e subindo todas as suas sub-dependências.
 [ ] Add validação ao (Inserir, editar, atualizar e remover)
+[X] Adicionar validação nos campos;
 [ ] Fazer com que o arquivo .env seja chamada dentro do arquivo application.properties
 
 Extras:

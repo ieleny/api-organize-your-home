@@ -1,7 +1,15 @@
 package organize.home.api.domain.entities;
 
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+
+@EntityScan
 public class Material 
 {
+    @NotNull(message = "O nome não pode ser nullo")
+    @NotBlank(message = "O nome não pode ser vazio")
     private String productName;
     private Float priceUnd;
     private Integer quantityBought;
