@@ -1,4 +1,4 @@
-package organize.home.domain.Entities;
+package organize.home.api.domain.Entities;
 
 public class Material 
 {
