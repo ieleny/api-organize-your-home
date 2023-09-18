@@ -69,23 +69,36 @@ I terminal
 [X] Gerar o projeto Spring boot
 [X] Criar o aquivo docker-compose (PhpMyAdmin, MySql, Redis )
 [ ] Criar o deploy da aplicação em java e adicionar no docker 
-[] Criar um serviço que se conecte a um banco de dados relacional, utilize o JdbcTemplate do Spring para essa conexão o banco será Mysql(MariaDb). 
+[X] Criar um serviço que se conecte a um banco de dados relacional, utilize o JdbcTemplate do Spring para essa conexão o banco será Mysql(MariaDb). 
 [] Criar conexão para o servidor Redis.
-[] Aplicar S.O.L.I.D
 [] Implementar uma API que retorne um objeto simples e utilize o Redis como cache.
 [] O cache deve ter um TTL de 10 segundos.
 [] O serviço deve ir ao banco de dados apenas na primeira requisição dentro desse intervalo de tempo, caso a resposta não seja nula.
 [] Colocar ao menos um teste de integração que valide a API.
 [X] É importante fornecer uma visibilidade do tempo gasto na construção.
 [] O serviço deverá ser executado usando docker e subindo todas as suas sub-dependências.
+[ ] Add validação ao (Inserir, editar, atualizar e remover)
+[ ] Fazer com que o arquivo .env seja chamada dentro do arquivo application.properties
+
+Extras:
+[ ] Add CORS
+
 
 # Tempo gasto na construção
 
-[16/09/2023] - Criar arquivo Docker do Mysql,Redis,PhpMyAdmin. Estudar sobre o redis e testar como funciona. [3 horas]
+[16/09/2023] - Criar arquivo Docker do Mysql,Redis,PhpMyAdmin. 
+             - Estudar sobre o redis e testar como funciona. [3 horas]
 [17/09/2023] - Começo do estudo para entender como funciona o spring boot. [5 horas]
-
+[18/09/2023] - Criado a conexão com o banco MySql(Jdbc), 
+             - Criado a migration com FlyWay
+             - A entidade Material 
+             - Servico para conectar com o banco de dados
+             - Aplicar arquitetura Hexagonal
+             - Criado a inserção no banco de dados
+             - Criado a camada de persistencia de dados
+             - Interface padrão do IMaterialRepository(Interface segretation) [5 horas]
 
 # Links utilizados
 
 Criar projeto spring boot: https://start.spring.io/
-
+Documentação spring boot: https://spring.io/projects
