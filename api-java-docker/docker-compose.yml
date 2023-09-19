@@ -15,11 +15,13 @@ services:
       MYSQL_USER: ${MYSQL_USER}
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
   phpmyadmin:
+    container_name: phpmyadmin
     image: phpmyadmin
     restart: always
     ports:
       - "${PHPMYADMIN_PORT}:80"
   redis:
+    container_name: redis
     image: redis:6.2-alpine
     restart: always
     ports:
@@ -27,16 +29,15 @@ services:
     command: redis-server --save 20 1 --loglevel warning --requirepass ${REDIS_PASSWORD}
     volumes: 
       - cache:/data
-  # api:
-  #   build:
-  #     context: ./java
-  #     dockerfile: Dockerfile
-  #   ports:
-  #     - 8081:8081
-  #   depends_on:
-  #     - db
-  #     - phpmyadmin
-  #     - redis
+  api:
+    container_name: api
+    build: ./../api
+    ports:
+      - "${SPRING_PORT}:6379"
+    depends_on:
+      - db
+      - phpmyadmin
+      - redis
 volumes:
   db-base:
   cache:
