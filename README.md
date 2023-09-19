@@ -45,6 +45,13 @@ Obs: O nome do docker container irá ficar 'api-java-docker'
 
 # Execute Java spring boot
 
+# Acessar a tela do phpMyAdmin - GUI banco de dados
+```http://localhost:8000```
+
+# Acessar a api via container
+```http://localhost:8080/api/v1/material```
+
+# Acessar o banco redis
 
 # Todo
 - Verbos da api
@@ -67,7 +74,7 @@ Obs: O nome do docker container irá ficar 'api-java-docker'
 
 [X] Gerar o projeto Spring boot
 [X] Criar o aquivo docker-compose (PhpMyAdmin, MySql, Redis )
-[ ] Criar o deploy da aplicação em java e adicionar no docker 
+[X] Criar o deploy da aplicação em java e adicionar no docker 
 [X] Criar um serviço que se conecte a um banco de dados relacional, utilize o JdbcTemplate do Spring para essa conexão o banco será Mysql(MariaDb). 
 [X] Criar conexão para o servidor Redis.
 [] Implementar uma API que retorne um objeto simples e utilize o Redis como cache.
@@ -75,7 +82,7 @@ Obs: O nome do docker container irá ficar 'api-java-docker'
 [] O serviço deve ir ao banco de dados apenas na primeira requisição dentro desse intervalo de tempo, caso a resposta não seja nula.
 [] Colocar ao menos um teste de integração que valide a API.
 [X] É importante fornecer uma visibilidade do tempo gasto na construção.
-[] O serviço deverá ser executado usando docker e subindo todas as suas sub-dependências.
+[x] O serviço deverá ser executado usando docker e subindo todas as suas sub-dependências.
 [X] Adicionar validação nos campos;
 
 Extras:
@@ -99,9 +106,10 @@ Extras:
              - Interface padrão do IMaterialRepository(Interface segretation) [5 horas]
 [19/09/2020] - Criado a conexão com o redis
              - Inserir no banco redis
-             - Listar no banco redis [8 horas]
+             - Listar no banco redis [5 horas]
 
 # Links utilizados
 
 Criar projeto spring boot: https://start.spring.io/
 Documentação spring boot: https://spring.io/projects
+Docker: https://www.docker.com/blog/kickstart-your-spring-boot-application-development/
