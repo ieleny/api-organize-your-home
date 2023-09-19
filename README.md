@@ -44,8 +44,7 @@ Acesse a pasta api-java-docker e execute o comando:
 Obs: O nome do docker container irá ficar 'api-java-docker'
 
 # Execute Java spring boot
-I terminal 
-``` mvn spring-boot:run ```
+
 
 # Todo
 - Verbos da api
@@ -70,20 +69,20 @@ I terminal
 [X] Criar o aquivo docker-compose (PhpMyAdmin, MySql, Redis )
 [ ] Criar o deploy da aplicação em java e adicionar no docker 
 [X] Criar um serviço que se conecte a um banco de dados relacional, utilize o JdbcTemplate do Spring para essa conexão o banco será Mysql(MariaDb). 
-[] Criar conexão para o servidor Redis.
+[X] Criar conexão para o servidor Redis.
 [] Implementar uma API que retorne um objeto simples e utilize o Redis como cache.
 [] O cache deve ter um TTL de 10 segundos.
 [] O serviço deve ir ao banco de dados apenas na primeira requisição dentro desse intervalo de tempo, caso a resposta não seja nula.
 [] Colocar ao menos um teste de integração que valide a API.
 [X] É importante fornecer uma visibilidade do tempo gasto na construção.
 [] O serviço deverá ser executado usando docker e subindo todas as suas sub-dependências.
-[ ] Add validação ao (Inserir, editar, atualizar e remover)
 [X] Adicionar validação nos campos;
-[ ] Fazer com que o arquivo .env seja chamada dentro do arquivo application.properties
 
 Extras:
 [ ] Add CORS
-
+[ ] Add Hateoas
+[ ] Add Validação de erro (Inserir, editar, atualizar e remover)
+[ ] Fazer com que o arquivo .env seja chamada dentro do arquivo application.properties
 
 # Tempo gasto na construção
 
@@ -98,6 +97,9 @@ Extras:
              - Criado a inserção no banco de dados
              - Criado a camada de persistencia de dados
              - Interface padrão do IMaterialRepository(Interface segretation) [5 horas]
+[19/09/2020] - Criado a conexão com o redis
+             - Inserir no banco redis
+             - Listar no banco redis [8 horas]
 
 # Links utilizados
 
