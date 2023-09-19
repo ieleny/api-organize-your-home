@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import organize.home.api.application.interfaces.IMaterialRepository;
+import organize.home.api.application.model.MaterialRowMapper;
 import organize.home.api.domain.entities.Material;
 
 @Repository
@@ -21,8 +23,8 @@ public class MaterialRepository implements IMaterialRepository
 
     @Override
     public List<Material> findAll() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'findAll'");
+        String sql = "SELECT * FROM material";
+        return jdbcTemplate.query(sql, new MaterialRowMapper());
     }
 
     @Override

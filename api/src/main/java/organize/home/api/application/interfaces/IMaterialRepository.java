@@ -1,4 +1,4 @@
-package organize.home.api.infrastructure.repository;
+package organize.home.api.application.interfaces;
 
 import java.util.List;
 import java.util.Optional;
