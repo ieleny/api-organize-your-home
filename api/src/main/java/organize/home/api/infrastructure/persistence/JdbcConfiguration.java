@@ -9,8 +9,8 @@ import org.springframework.jdbc.core.JdbcTemplate;
 @Configuration
 public class JdbcConfiguration 
 {
-   @Bean
-   public JdbcTemplate jdbcTemplate(HikariDataSource hikariDataSource){
-       return new JdbcTemplate(hikariDataSource);
-   }
+    @Bean
+    public JdbcTemplate jdbcTemplate(HikariDataSource hikariDataSource){
+        return new JdbcTemplate(hikariDataSource);
+    }
 }
