@@ -26,6 +26,7 @@ public class CacheMaterialRepository implements IMaterialCacheRepository
         hashOperations = template.opsForHash();
     }
 
+    @Override
     public Material save(Material material) {
         hashOperations.put(HASH_KEY, material.getId(), material);
         return material;
@@ -34,6 +35,13 @@ public class CacheMaterialRepository implements IMaterialCacheRepository
     @Override
     public Map<String, Material> findAll() {
        return hashOperations.entries(HASH_KEY);
+    }
+
+    @Override
+    public int quantityList() {
+        HashMap<Integer, String> hash_map = new HashMap<Integer, String>();
+        hash_map.put(0, hashOperations.entries(HASH_KEY));
+        return hash_map.size();
     }
     
 }

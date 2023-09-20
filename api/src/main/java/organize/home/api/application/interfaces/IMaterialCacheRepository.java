@@ -10,4 +10,5 @@ public interface IMaterialCacheRepository
 {
     Map<String, Material> findAll();
     Material save(Material material);
+    int quantityList();
 }
