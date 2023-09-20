@@ -43,8 +43,6 @@ Acesse a pasta api-java-docker e execute o comando:
 
 Obs: O nome do docker container irá ficar 'api-java-docker'
 
-# Execute Java spring boot
-
 # Acessar a tela do phpMyAdmin - GUI banco de dados
 ```http://localhost:8000```
 
@@ -72,24 +70,24 @@ Obs: O nome do docker container irá ficar 'api-java-docker'
 
 # Regras de negocio
 
-[X] Gerar o projeto Spring boot
-[X] Criar o aquivo docker-compose (PhpMyAdmin, MySql, Redis )
-[X] Criar o deploy da aplicação em java e adicionar no docker 
-[X] Criar um serviço que se conecte a um banco de dados relacional, utilize o JdbcTemplate do Spring para essa conexão o banco será Mysql(MariaDb). 
-[X] Criar conexão para o servidor Redis.
-[] Implementar uma API que retorne um objeto simples e utilize o Redis como cache.
-[] O cache deve ter um TTL de 10 segundos.
-[] O serviço deve ir ao banco de dados apenas na primeira requisição dentro desse intervalo de tempo, caso a resposta não seja nula.
-[] Colocar ao menos um teste de integração que valide a API.
-[X] É importante fornecer uma visibilidade do tempo gasto na construção.
-[x] O serviço deverá ser executado usando docker e subindo todas as suas sub-dependências.
-[X] Adicionar validação nos campos;
+[X] Gerar o projeto Spring boot </br>
+[X] Criar o aquivo docker-compose (PhpMyAdmin, MySql, Redis ) </br>
+[X] Criar o deploy da aplicação em java e adicionar no docker </br>
+[X] Criar um serviço que se conecte a um banco de dados relacional, utilize o JdbcTemplate do Spring para essa conexão o banco será Mysql(MariaDb). </br>
+[X] Criar conexão para o servidor Redis. </br>
+[] Implementar uma API que retorne um objeto simples e utilize o Redis como cache. </br>
+[] O cache deve ter um TTL de 10 segundos. </br>
+[] O serviço deve ir ao banco de dados apenas na primeira requisição dentro desse intervalo de tempo, caso a resposta não seja nula. </br>
+[] Colocar ao menos um teste de integração que valide a API. </br>
+[X] É importante fornecer uma visibilidade do tempo gasto na construção. </br>
+[x] O serviço deverá ser executado usando docker e subindo todas as suas sub-dependências. </br>
+[X] Adicionar validação nos campos; </br>
 
 Extras:
-[ ] Add CORS
-[ ] Add Hateoas
-[ ] Add Validação de erro (Inserir, editar, atualizar e remover)
-[ ] Fazer com que o arquivo .env seja chamada dentro do arquivo application.properties
+[ ] Add CORS </br>
+[ ] Add Hateoas </br>
+[ ] Add Validação de erro (Inserir, editar, atualizar e remover) </br>
+[ ] Fazer com que o arquivo .env seja chamada dentro do arquivo application.properties</br>
 
 # Tempo gasto na construção
 
