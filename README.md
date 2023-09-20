@@ -83,7 +83,7 @@ Obs: O nome do docker container irá ficar 'api-java-docker'
 [x] O serviço deverá ser executado usando docker e subindo todas as suas sub-dependências. </br>
 [X] Adicionar validação nos campos; </br>
 
-Extras:
+Extras: </br>
 [ ] Add CORS </br>
 [ ] Add Hateoas </br>
 [ ] Add Validação de erro (Inserir, editar, atualizar e remover) </br>
@@ -91,21 +91,21 @@ Extras:
 
 # Tempo gasto na construção
 
-[16/09/2023] - Criar arquivo Docker do Mysql,Redis,PhpMyAdmin. 
-             - Estudar sobre o redis e testar como funciona. [3 horas]
-[17/09/2023] - Começo do estudo para entender como funciona o spring boot. [5 horas]
-[18/09/2023] - Criado a conexão com o banco MySql(Jdbc), 
-             - Criado a migration com FlyWay
-             - A entidade Material 
-             - Servico para conectar com o banco de dados
-             - Aplicar arquitetura Hexagonal
-             - Criado a inserção no banco de dados
-             - Criado a camada de persistencia de dados
-             - Interface padrão do IMaterialRepository(Interface segretation) [5 horas]
-[19/09/2020] - Criado a conexão com o redis
-             - Inserir no banco redis
-             - Listar no banco redis [5 horas]
-
+[16/09/2023] - Criar arquivo Docker do Mysql,Redis,PhpMyAdmin. </br>
+             - Estudar sobre o redis e testar como funciona. [3 horas]</br>
+[17/09/2023] - Começo do estudo para entender como funciona o spring boot. [5 horas]</br>
+[18/09/2023] - Criado a conexão com o banco MySql(Jdbc), </br>
+             - Criado a migration com FlyWay</br>
+             - A entidade Material </br>
+             - Servico para conectar com o banco de dados </br>
+             - Aplicar arquitetura Hexagonal </br>
+             - Criado a inserção no banco de dados </br>
+             - Criado a camada de persistencia de dados </br>
+             - Interface padrão do IMaterialRepository(Interface segretation) [5 horas] </br>
+[19/09/2020] - Criado a conexão com o redis </br>
+             - Inserir no banco redis </br>
+             - Listar no banco redis [5 horas] </br>
+ 
 # Links utilizados
 
 Criar projeto spring boot: https://start.spring.io/
