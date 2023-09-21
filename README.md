@@ -39,7 +39,7 @@ Root name is: 'Root'
 # Execute commands docker
 Acesse a pasta api-java-docker e execute o comando:
 
-``` docker compose up ```
+``` docker compose up --build```
 
 Obs: O nome do docker container irá ficar 'api-java-docker'
 
@@ -50,6 +50,8 @@ Obs: O nome do docker container irá ficar 'api-java-docker'
 ```http://localhost:8080/api/v1/material```
 
 # Acessar o banco redis
+``` docker exec -it redis redis-cli```
+``` AUTH [PASSWORD] ```
 
 # Todo
 - Verbos da api
@@ -59,9 +61,6 @@ Obs: O nome do docker container irá ficar 'api-java-docker'
         - quantity-bought (Float)
         - price-und (INTEGER)
     - [GET] GET material
-    - [GET] GET material by id
-    - [PATCH] UPDATE material  
-    - [DELETE] Delete material
 
 - Versionamento de api
 - Testes
@@ -75,9 +74,9 @@ Obs: O nome do docker container irá ficar 'api-java-docker'
 [X] Criar o deploy da aplicação em java e adicionar no docker </br>
 [X] Criar um serviço que se conecte a um banco de dados relacional, utilize o JdbcTemplate do Spring para essa conexão o banco será Mysql(MariaDb). </br>
 [X] Criar conexão para o servidor Redis. </br>
-[] Implementar uma API que retorne um objeto simples e utilize o Redis como cache. </br>
-[] O cache deve ter um TTL de 10 segundos. </br>
-[] O serviço deve ir ao banco de dados apenas na primeira requisição dentro desse intervalo de tempo, caso a resposta não seja nula. </br>
+[X] Implementar uma API que retorne um objeto simples e utilize o Redis como cache. </br>
+[X] O cache deve ter um TTL de 10 segundos. </br>
+[X] O serviço deve ir ao banco de dados apenas na primeira requisição dentro desse intervalo de tempo, caso a resposta não seja nula. </br>
 [] Colocar ao menos um teste de integração que valide a API. </br>
 [X] É importante fornecer uma visibilidade do tempo gasto na construção. </br>
 [x] O serviço deverá ser executado usando docker e subindo todas as suas sub-dependências. </br>
@@ -105,6 +104,9 @@ Extras: </br>
 [19/09/2020] - Criado a conexão com o redis </br>
              - Inserir no banco redis </br>
              - Listar no banco redis [5 horas] </br>
+[21/09/2020] - Readme
+             - Ajustes
+             - TTL [8 horas] </br>
  
 # Links utilizados
 
