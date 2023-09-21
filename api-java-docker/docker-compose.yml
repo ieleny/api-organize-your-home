@@ -33,7 +33,7 @@ services:
     container_name: api
     build: ./../api
     ports:
-      - "${SPRING_PORT}:6379"
+      - "${SPRING_PORT}:8080"
     depends_on:
       - db
       - phpmyadmin
