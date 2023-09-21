@@ -1,7 +1,6 @@
 package organize.home.api.domain.controller;
 
 import java.util.List;
-import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,10 +16,10 @@ import organize.home.api.application.service.MaterialService;
 @RestController
 @RequestMapping("/api/v1/material")
 public class MaterialController 
-{
+{   
+    @Autowired
     private final MaterialService materialService;
 
-    @Autowired
     public MaterialController(MaterialService materialService) {
         this.materialService = materialService;
     }

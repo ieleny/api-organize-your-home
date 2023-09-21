@@ -1,7 +1,8 @@
 package organize.home.api.infrastructure.repository;
 
+import java.math.BigInteger;
 import java.util.List;
-import java.util.Optional;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -14,9 +15,9 @@ import organize.home.api.domain.entities.Material;
 @Repository
 public class MaterialRepository implements IMaterialRepository
 {
+    @Autowired
     private final JdbcTemplate jdbcTemplate;
 
-    @Autowired
     public MaterialRepository(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
@@ -28,37 +29,47 @@ public class MaterialRepository implements IMaterialRepository
     }
 
     @Override
-    public int addMaterial(Material material) {
-        
-        // Dois repository do Redis e MySql
-        // Colocar a lógica aqui
+    public String addMaterial(Material material) {
 
-        String sql = """
-           INSERT into material(product_name,quantity_bought,price_und)
-           VALUES (?,?,?);
-                          """;
+        String idMaterial = "-1";
+
+        try {
+
+            String sql = """
+                INSERT into material(product_name,quantity_bought,price_und)
+                VALUES (?,?,?);""";
            
-        return jdbcTemplate.update(sql, material.getProductName(),
+            jdbcTemplate.update(sql, 
+                    material.getProductName(),
                     material.getQuantityBought(),
-                    material.getPriceUnd());
+                    material.getPriceUnd()
+                );
+            
+            
+            idMaterial = lastId().toString();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return idMaterial;
     }
 
-    @Override
-    public Optional<Material> findById(int id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'findById'");
-    }
+    protected BigInteger lastId(){
 
-    @Override
-    public int deleteMaterial(int id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'deleteMaterial'");
-    }
+        BigInteger lastId = BigInteger.valueOf(-1);
 
-    @Override
-    public int updateMaterial(int id, Material employee) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'updateMaterial'");
+        try {
+            String sql = "SELECT LAST_INSERT_ID() as id_material FROM material";
+            List<Map<String,Object>> material = jdbcTemplate.queryForList(sql);
+
+            lastId = (BigInteger) material.get(0).get("id_material");
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return lastId;
     }
     
 }

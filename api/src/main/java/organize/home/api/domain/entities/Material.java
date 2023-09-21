@@ -4,15 +4,12 @@ import java.io.Serializable;
 
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.data.annotation.Id;
-import org.springframework.data.redis.core.RedisHash;
-import org.springframework.data.redis.core.TimeToLive;
 
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
 @EntityScan
-@RedisHash("MATERIAL")
 public class Material implements Serializable
 {
     @Id
@@ -26,9 +23,6 @@ public class Material implements Serializable
 
     @Min(1)
     private Integer quantityBought;
-
-    @TimeToLive
-    private Long expiration = 1000L;
 
     public Material(String id, String productName, Float priceUnd, Integer quantityBought) {
         this.id = id;

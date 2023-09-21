@@ -1,10 +1,6 @@
 package organize.home.api.infrastructure.repository;
 
-import java.util.List;
-import java.util.Map;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.redis.core.HashOperations;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Repository;
 
@@ -12,36 +8,40 @@ import organize.home.api.application.interfaces.IMaterialCacheRepository;
 import organize.home.api.domain.entities.CacheData;
 import organize.home.api.domain.entities.Material;
 
+import java.util.*;
+import java.util.concurrent.TimeUnit;
+
 @Repository
 public class CacheMaterialRepository implements IMaterialCacheRepository
 {
-    public static final String HASH_KEY = "MATERIAL";
+    public static final String HASH_KEY = "CacheData";
+    public static final Integer TIMETOLIVE = 10;
 
-    private RedisTemplate<String, Material> template;
-    private HashOperations hashOperations;
-    
     @Autowired
-    public CacheMaterialRepository(RedisTemplate<String, Material> template) {
+    private RedisTemplate<String, CacheData> template;
+    
+    public CacheMaterialRepository(RedisTemplate<String, CacheData> template) {
         this.template = template;
-        hashOperations = template.opsForHash();
     }
 
     @Override
-    public Material save(Material material) {
-        hashOperations.put(HASH_KEY, material.getId(), material);
-        return material;
+    public void save(CacheData cacheData, List<Material> materials) {
+        template.opsForHash().put(HASH_KEY, cacheData.getId(), materials);
+        expireKey();   
+    }
+
+    public void expireKey()  {
+        template.expire(HASH_KEY, TIMETOLIVE, TimeUnit.SECONDS);
     }
 
     @Override
-    public Map<String, Material> findAll() {
-       return hashOperations.entries(HASH_KEY);
+    public List<Object> findAll() {
+       return template.opsForHash().values(HASH_KEY);
     }
 
     @Override
-    public int quantityList() {
-        HashMap<Integer, String> hash_map = new HashMap<Integer, String>();
-        hash_map.put(0, hashOperations.entries(HASH_KEY));
-        return hash_map.size();
+    public int quantityList() {   
+        return template.opsForHash().entries(HASH_KEY).size();
     }
     
 }

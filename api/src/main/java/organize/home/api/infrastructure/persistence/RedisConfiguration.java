@@ -8,19 +8,19 @@ import org.springframework.data.redis.connection.lettuce.LettuceConnectionFactor
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.repository.configuration.EnableRedisRepositories;
 
-import organize.home.api.domain.entities.Material;
+import organize.home.api.domain.entities.CacheData;
 
 @Configuration
 @EnableRedisRepositories
 public class RedisConfiguration 
 {
-    @Value("${spring.redis.host}")
+    @Value("${spring.data.redis.host}")
     private String redisHost;
 
-    @Value("${spring.redis.port}")
+    @Value("${spring.data.redis.port}")
     private int redisPort;
 
-    @Value("${spring.redis.password}")
+    @Value("${spring.data.redis.password}")
     private String password;
 
     @Bean
@@ -31,8 +31,8 @@ public class RedisConfiguration
     }
 
     @Bean
-    RedisTemplate<String, Material> redisTemplate() {
-      RedisTemplate<String, Material> redisTemplate = new RedisTemplate<>();
+    RedisTemplate<String, CacheData> redisTemplate() {
+      RedisTemplate<String, CacheData> redisTemplate = new RedisTemplate<>();
       redisTemplate.setConnectionFactory(redisConnectionFactory());
       return redisTemplate;
     }
