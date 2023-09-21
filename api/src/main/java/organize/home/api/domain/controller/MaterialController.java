@@ -30,6 +30,7 @@ public class MaterialController
     }
 
     @PostMapping
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     public void create(@Valid @RequestBody Material material) {
         materialService.addMaterial(material);
     }
