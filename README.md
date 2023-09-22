@@ -83,7 +83,7 @@ Obs: O nome do docker container irá ficar 'api-java-docker'
 [X] Adicionar validação nos campos; </br>
 
 Extras: </br>
-[ ] Add CORS </br>
+[X] Add CORS </br>
 [ ] Add Hateoas </br>
 [ ] Add Validação de erro (Inserir, editar, atualizar e remover) </br>
 [ ] Fazer com que o arquivo .env seja chamada dentro do arquivo application.properties</br>
@@ -104,9 +104,11 @@ Extras: </br>
 [19/09/2020] - Criado a conexão com o redis </br>
              - Inserir no banco redis </br>
              - Listar no banco redis [5 horas] </br>
-[21/09/2020] - Readme
-             - Ajustes
-             - TTL [8 horas] </br>
+[21/09/2020] - Readme </br>
+             - Ajustes </br>
+             - TTL [5 horas] </br>
+[22/09/2020] - Add Cors  </br>
+             - Aplicação dos testes [2 horas]  </br>
  
 # Links utilizados
 
